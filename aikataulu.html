@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Aikataulu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="aikataulu.js"></script>
+  <link href="aikataulu.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="init();">
+  <div id="wrapper">
+    <h1>Työpäivä</h1>
+    <div id="current-date-display" onclick="a.editDate();">
+      <h2 title="päivämäärä">&#128197;&nbsp;<span id="current-date">[päivämäärä]</span>&nbsp;</h2>
+    </div>
+    <h3 title="aika">&#128344;&nbsp;<span id="current-time">00:00:00</span>&nbsp;</h3>
+    <div id="pause-button" onclick="a.startButton();">&#x25B6;</div>
+    <h3 title="kokonaisaika">&#x023F1;&nbsp;<span id="total-time">00 t 00 m 00 s</span></h3>
+    <div id="timeline" title="aikajana">
+      <div id="start-label" class="timeline-endpoint">
+        <span class="timeline-node">&#x25B6;</span>&nbsp;
+        <span id="start-time-wrapper" title="aloitusaika">
+          <button id="start-button" onclick="a.startButton();">Aloita</button>
+        </span>
+      </div>
+      <ul id="timeline-breaks"></ul>
+      <div id="end-label" class="timeline-endpoint">
+        <span class="timeline-node">&#x25fc;</span>&nbsp;
+        <span id="end-time-wrapper" title="lopetusaika"><button id="stop-button" onclick="a.stopButton();">Lopeta</button></span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
